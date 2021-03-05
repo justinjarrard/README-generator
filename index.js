@@ -52,7 +52,7 @@ const questions = () => {
       let body = `
 # ${data.title}
 
-![license](https://img.shields.io/badge/jayjay-${data.license}-brightgreen)
+![license](https://img.shields.io/badge/readmegen-${data.license}-brightgreen)
 
 ## Description
   ${data.description}
