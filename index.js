@@ -88,7 +88,7 @@ const questions = () => {
   
         `
 
-      fs.writeFile('README.md', body, err => {
+      fs.writeFile('NEWREADME.md', body, err => {
         if (err) console.log(err)
       })
       // if (data.license === 'MIT') {
