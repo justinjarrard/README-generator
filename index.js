@@ -1,42 +1,45 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { SSL_OP_ALLOW_UNSAFE_LEGACY_RENEGOTIATION } = require('constants');
 let results = []
-
 // array of questions for user
 const questions = () => {
   inquirer.prompt([
     {
       type: 'input',
       name: 'title',
-      message: 'Enter a title for your proeject:'
+      message: 'Enter a title for your proeject'
     }, {
       type: 'input',
       name: 'description',
-      message: 'Breifly describe your project:'
-    }, {
-      type: 'input',
-      name: 'contents',
-      message: 'Table of Contents:'
+      message: 'Breifly describe your project'
     }, {
       type: 'input',
       name: 'install',
-      message: 'Please provide installation instructions:'
+      message: 'Please provide installation instructions'
+    }, {
+      type: 'input',
+      name: 'usage',
+      message: 'Please provide usage instructions'
     }, {
       type: 'list',
       name: 'license',
-      message: 'Please select one of these licenses:',
+      message: 'Choose a license you will be using',
       choices: [
-        'badge one',
-        'badge two',
-        'badge three',
-        'badge four'
+        'Community',
+        'MIT',
+        'GNUGPL',
       ]
     }, {
       type: 'input',
       name: 'contributing',
-      message: 'Please list any contributors to your project:'
+      message: 'Please list any contributors to your project'
     }, {
-      type: 'email',
+      type: 'input',
+      name: 'test',
+      message: 'Please provide any testing instructions'
+    }, {
+      type: 'input',
       name: 'email',
       message: 'Please enter your email address:'
     }, {
@@ -46,17 +49,63 @@ const questions = () => {
     }
   ])
     .then(data => {
-      console.log(data)
-      // results.push(data)
-      // questions.push(res)
-      // questions()
-    })
+      let body = `
+# ${data.title}
 
-  // fs.writeFile(README.md, JSON.stringify(data), err => {
-  //   if (err) console.log(err)
-  // })
+![license](https://img.shields.io/badge/jayjay-${data.license}-brightgreen)
+
+## Description
+  ${data.description}
+
+## Table of Contents:
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+    
+## Installation
+  ${data.install}
+
+## Usage
+  ${data.usage}
+
+## License
+  ${data.license}
+
+## Contributing
+  ${data.contributing}
+
+## Tests
+  ${data.test}
+
+## Questions
+  For questions regarding the application please contact me at:
+  [My Github](https://github.com/${data.github})
+  [Email Me!](mailto:${data.email})
+  
+        `
+
+      fs.writeFile('README.md', body, err => {
+        if (err) console.log(err)
+      })
+      // if (data.license === 'MIT') {
+      //   fs.appendFile('README.md', mitLicense, err => {
+      //     if (err) { console.log(err) }
+      //   })
+      // } else if (data.license === 'GNUGPL') {
+      //   fs.appendFile('README.md', gnuLicense, err => {
+      //     if (err) { console.log(err) }
+      //   })
+      // } else {
+      //   fs.appendFile('README.md', 'This is a community License')
+      // }
+    })
 
     .catch(err => console.log(err))
 }
 
 questions()
+
