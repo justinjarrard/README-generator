@@ -90,17 +90,17 @@ const questions = () => {
       fs.writeFile('NEWREADME.md', body, err => {
         if (err) console.log(err)
       })
-      // if (data.license === 'MIT') {
-      //   fs.appendFile('README.md', mitLicense, err => {
-      //     if (err) { console.log(err) }
-      //   })
-      // } else if (data.license === 'GNUGPL') {
-      //   fs.appendFile('README.md', gnuLicense, err => {
-      //     if (err) { console.log(err) }
-      //   })
-      // } else {
-      //   fs.appendFile('README.md', 'This is a community License')
-      // }
+      if (data.license === 'MIT') {
+        fs.appendFile('NEWREADME.md', '[mitLicense](https://mit-license.org/)', err => {
+          if (err) { console.log(err) }
+        })
+      } else if (data.license === 'GNUGPL') {
+        fs.appendFile('NEWREADME.md', '[gnuLicense](http://gnugpl.org/)', err => {
+          if (err) { console.log(err) }
+        })
+      } else {
+        fs.appendFile('README.md', 'This is a community License')
+      }
     })
 
     .catch(err => console.log(err))
