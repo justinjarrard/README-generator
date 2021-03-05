@@ -1,10 +1,10 @@
 
-# 
+# good README generator
 
-![license](https://img.shields.io/badge/readmegen-GNUGPL-brightgreen)
+![license](https://img.shields.io/badge/readmegen-MIT-brightgreen)
 
 ## Description
-  
+  an command-line application that prompts users for inoformation on their project and creates a professional readme page from it.
 
 ## Table of Contents:
   - [Description](#description)
@@ -16,23 +16,23 @@
   - [Questions](#questions)
     
 ## Installation
-  
+  run node index.js in this file
 
 ## Usage
-  
+  fill out the prompts and open your NEWREADME file
 
 ## License
-  GNUGPL
+  MIT
 
 ## Contributing
-  
+  N/A
 
 ## Tests
-  
+  Use at will
 
 ## Questions
   For questions regarding the application please contact me at:
-  [My Github](https://github.com/)
-  [Email Me!](mailto:)
+  [My Github](https://github.com/justinjarrard)
+  [Email Me!](mailto:jjarrard21@gmail.com)
   
-        [gnuLicense](http://gnugpl.org/)
+        [mitLicense](https://mit-license.org/)
