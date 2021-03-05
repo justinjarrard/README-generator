@@ -1,10 +1,10 @@
 
-# readme gen
+# good README.md generator
 
-![license](https://img.shields.io/badge/jayjay-Community-brightgreen)
+![license](https://img.shields.io/badge/readmegen-GNUGPL-brightgreen)
 
 ## Description
-  helps you build a readme.md file
+  an inline application that allows users to create a professional readme file easily.
 
 ## Table of Contents:
   - [Description](#description)
@@ -16,19 +16,19 @@
   - [Questions](#questions)
     
 ## Installation
-  just run the program
+  run the node index.js command
 
 ## Usage
-  use it
+  fill out the question prompts and see the results on your NEWREADME.md file.
 
 ## License
-  Community
+  GNUGPL
 
 ## Contributing
-  yessir
+  n/a
 
 ## Tests
-  go on with your bad self
+  use at will
 
 ## Questions
   For questions regarding the application please contact me at:
